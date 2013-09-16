@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="ocstocksync" basedir=".">
+	
+	<property name="component" value="ocstocksync"/>
+	<property name="version" value="0.1"/>
+
+
+	
+	<copy todir="/Applications/mamp/htdocs/ocshop/">
+		<fileset dir=".">
+		</fileset>
+	</copy>
+	
+
+
+	<delete dir="/Users/eric/Documents/Development/staging/latest/sources/ocstocksync"/>
+
+	<copy todir="/Users/eric/Documents/Development/staging/latest/sources/ocstocksync/" overwrite="true">
+		<fileset dir=".">
+			<exclude name=".externalToolBuilders/*"/>
+			<exclude name=".settings/*"/>
+			<exclude name=".buildpath"/>
+			<exclude name=".git/*"/>
+			<exclude name="build.xml"/>
+			<exclude name=".project"/>
+			<exclude name="*.sublime-project"/>
+			<exclude name="*.sublime-workspace"/>
+			<exclude name="cache.properties"/>
+
+		</fileset>
+	</copy>
+
+
+	<delete file="/Users/eric/Documents/Development/staging/latest/ocstocksync.${version}-oc1.5.6.zip"/>
+
+	<zip destfile="/Users/eric/Documents/Development/staging/latest/ocstocksync.${version}-oc1.5.6.zip" update="false"
+		basedir="/Users/eric/Documents/Development/staging/latest/sources/${component}"/>
+	
+
+	
+
+
+</project>
+
