@@ -24,6 +24,7 @@ $_['lang_please_choose_unique_id'] = '--- Please Choose ---';
 $_['lang_step_4_title'] = 'Do the Update';
 $_['lang_update_stock'] = 'Do the Update';
 $_['lang_form_submission_errors'] = 'There were errors with the form.  Please ensure you have completed all information.';
+$_['lang_read_more_msg']="Read More";
 
 // Text
 $_['text_content_top']    = 'Content Top';

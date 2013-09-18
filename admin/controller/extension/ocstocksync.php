@@ -3,7 +3,8 @@
 class ControllerExtensionOcstocksync extends Controller {
 
 	private $strings = array('lang_sync_date','lang_sync_products_updated','lang_no_syncs','lang_checking_version','lang_getting_messages','lang_step_1_title','lang_step_1_desc','lang_step_2_title','lang_step_2_desc','lang_step_3_title','lang_step_3_desc',
-							'lang_product_attribute','lang_csv_column','lang_unique_id','lang_please_choose_unique_id','lang_step_4_title','lang_update_stock','lang_form_submission_errors');
+							'lang_product_attribute','lang_csv_column','lang_unique_id','lang_please_choose_unique_id','lang_step_4_title','lang_update_stock','lang_form_submission_errors',
+                            'lang_read_more_msg');
 
 
 	/**
@@ -52,6 +53,7 @@ class ControllerExtensionOcstocksync extends Controller {
         	$this->data[$str] = $this->language->get($str);
 
         $this->data['last_updated'] = $this->model_ocstocksync_ocstocksync->get_syncs();
+        $this->data['announcements'] = $this->model_ocstocksync_ocstocksync->load_announcements();
 
     	//load and render the view
         $this->template = 'extension/ocstocksync.tpl';

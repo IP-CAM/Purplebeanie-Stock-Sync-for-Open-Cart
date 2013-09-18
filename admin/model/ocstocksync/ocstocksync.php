@@ -1,4 +1,7 @@
 <?php
+
+require_once(__DIR__.'/simplepie_1.3.1.compiled.php');
+
 class ModelOcstocksyncOcstocksync extends Model
 {
 
@@ -95,6 +98,21 @@ class ModelOcstocksyncOcstocksync extends Model
 
         return $syncs;
 
+  }
+
+  /**
+  * loads announcmeents from the purplebeanie web site
+  * @return array
+  */
+
+  public function load_announcements()
+  {
+  	$feed = new SimplePie();
+  	$feed->set_feed_url('http://www.purplebeanie.com/Table/Blog/Open-Cart-Stock-Sync/');
+  	$feed->enable_cache(false); //set to false...
+  	$feed->init();
+  	$items = $feed->get_items();
+  	return $items;
   }
 
 

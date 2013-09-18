@@ -1,4 +1,4 @@
-Purplebeanie Stock Synch for Open Cart
+Purplebeanie Stock Sync for Open Cart
 ==============
 
 Allows synching of stock in open cart with an external source.

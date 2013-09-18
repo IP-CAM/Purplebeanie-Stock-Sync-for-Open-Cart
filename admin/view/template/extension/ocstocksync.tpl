@@ -111,12 +111,12 @@
             </div>
             <div style="float:right; width:40%; text-align:center;">
 
-                <div id="opencart-stock-sync-version" class="attention" style="background-image:none; margin:0px 20px 10px 20px; text-align:left;">
-                    <div id="openbay_version_loading"><img src="<?php echo HTTPS_SERVER; ?>view/image/loading.gif" /> <?php echo $lang_checking_version; ?></div>
-                </div>
-
                 <div id="opencart-stock-sync-notification" class="attention" style="background-image:none; margin: 0px 20px; text-align:left;">
-                    <div id="openbay_loading"><img src="<?php echo HTTPS_SERVER; ?>/view/image/loading.gif" /> <?php echo $lang_getting_messages; ?></div>
+                    <?php foreach ($announcements as $announcement) :?>
+                        <p><strong><?php echo $announcement->get_title();?></strong><br/><i><?php echo $announcement->get_date();?></i></p>
+                        <p><?php echo substr($announcement->get_content(),0,512);?>...</p>
+                        <p><a class="button" href="<?php echo $announcement->get_link();?>" target="_blank"><?php echo $lang_read_more_msg;?></a></p>
+                    <?php endforeach;?>
                 </div>
 
             </div>
